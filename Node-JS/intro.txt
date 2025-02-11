@@ -1,0 +1,208 @@
+Node.JS
+
+JavaScript Runtime Environment
+it is used for server side programming
+
+*Node.js is not language, library or framework, it is Runtime Environment where JavaScript can run on server side.
+
+        Process :-
+
+process : This object provides information about, and control over, the current Node.js process.
+
+process.argv : return an  array containing the command-line arguments passed when thr Node.js process was launched.
+
+
+MODULE EXPORTS
+
+require() = a built in function to include external modules that exist in separate files.
+
+module.exports = a special object that is used to export the values from a module so that other modules can use them.
+
+
+NPM(Node Package Manager)
+
+npm is the standard package Manager for the Node.js
+
+Installing Packages
+
+node-modules: The node_modules folder contains ever installed dependency for your project 
+
+package-lock.json : it records the exact version of every installed, dependency including its sub- dependencies and their versions.
+
+Local vs Globally Installation
+
+Local :- installed in the project directory. it is specific to the project.
+command :- npm install <package-name>
+
+Globally :- installed in the global directory. it is available for all projects.
+command :- npm install -g <package-name>
+    and for using it we have to link it to the project using the command :- npm link <package-name>
+
+
+require vs import
+
+e.g: import {sum} from "./math.js
+require is used in CommonJS and import is used in ES6 modules.
+
+we can't selectively load only the pieces we need with require but with import, we can selectively load the pieces we need, which can save memory.
+
+Loading is Synchronous with require but it is Asynchronous with import.
+
+
+Library vs Framework
+
+Library :- A library is a collection of pre- written code that can be used to perform specific task.
+e.g: Lodash, Moment.js, axios, etc.
+
+Framework :- A framework is a collection of pre- written code that provide a structure for developing software applications
+e.g: Express.js, React.js, Angular.js, etc.
+
+
+Express :-
+
+A Node.js web applications framework that helps us to make web applications
+it is used for server side programming
+
+1. listen for incoming requests
+2. for parse the request
+3. match response from the routs
+4. sending response back to the client as pr the request
+
+*PORTS* :- are the logical endpoints of network connection that is used to exchange information between a web server and a client.
+
+app.use :- it is used to track the listen request
+
+Routing :- it is a process of selecting path for traffic in a network or between or across multiple networks.
+
+
+Nodeman :- it is a tool for managing and running multiple instances of a Node.js application in a production environment. it
+is used for load balancing, monitoring, and scaling of the application. it is automatically restarts the application if code changes.
+
+Templating :-
+
+EJS(Embedded JavaScript Template)
+EJS is a simple Templating language that lets you generate HTML mark up with plain JavaScript. 
+
+for using ejs: app.set("view engine", "ejs");
+
+difference between send and render
+
+send :- it is used to send a response back to the client as per the request.
+it can send string, number, float, boolean and HTML etc.. but can't able to send to large files.
+render :- for sending large files we use render. it is used to render a view and send it back to the client as per the request.
+
+views directory :- for storing the ejs files we use views directory.
+and we have to import the ejs file in the views directory in the app.js file.
+const path = require('path');
+app.set('views', path.join(__dirname, 'views'));
+
+
+Interpolation Syntax
+
+Interpolation refers to "embedded expression" into marked up text.
+e.g.: <h1>Hello <%= name %></h1>;
+
+Tags
+<% 'Scriptlet' tag, for control-flow, no output
+<%_ ‘Whitespace Slurping’ Scriptlet tag, strips all whitespace before it
+<%= Outputs the value into the template (HTML escaped)
+<%- Outputs the unescaped value into the template
+<%# Comment tag, no execution, no output
+<%% Outputs a literal '<%'
+%> Plain ending tag
+-%> Trim-mode ('newline slurp') tag, trims following newline
+_%> ‘Whitespace Slurping’ ending tag, removes all whitespace after it
+
+
+for using CSS and JS in EJS we set a middleware on server page :-
+app.use(express.static("public"));
+
+
+
+
+Working of the command :- 
+"npm i bcrypt connect-mongo cookie-parser dotenv ejs express express-ejs-layouts express-session jsonwebtoken method-override mongoose"
+
+The command you provided is used to install several Node.js packages using npm (Node Package Manager). Here's a breakdown of what each package does:
+
+bcrypt: A library to help you hash passwords. It is commonly used for securely storing user passwords in a database.
+
+connect-mongo: A MongoDB session store for Express and Connect. It allows you to store session data in a MongoDB database, which is useful for persisting user sessions across server restarts.
+
+cookie-parser: A middleware for Express that parses cookies attached to the client request object. It allows you to easily access cookie data in your application.
+
+dotenv: A module that loads environment variables from a .env file into process.env. This is useful for managing configuration settings, such as API keys and database connection strings, without hardcoding them in your source code.
+
+ejs: A templating engine for Node.js that allows you to generate HTML markup with plain JavaScript. It is often used to render dynamic content in web applications.
+
+express: A web application framework for Node.js that simplifies the process of building web applications and APIs. It provides a robust set of features for web and mobile applications.
+
+express-ejs-layouts: A middleware for Express that allows you to use EJS as a templating engine with layout support. It helps in organizing your views by allowing you to define a common layout for your pages.
+
+express-session: A middleware for Express that manages user sessions. It allows you to store session data on the server side and associate it with a unique session ID stored in a cookie on the client.
+
+jsonwebtoken: A library for creating and verifying JSON Web Tokens (JWT). JWTs are commonly used for authentication and information exchange in web applications.
+
+method-override: A middleware for Express that allows you to use HTTP verbs such as PUT or DELETE in places where the client doesn't support it. It enables you to override the HTTP method used in a request.
+
+mongoose: An Object Data Modeling (ODM) library for MongoDB and Node.js. It provides a schema-based solution to model your application data and simplifies interactions with MongoDB.
+
+Summary of the Command
+The command npm i bcrypt connect-mongo cookie-parser dotenv ejs express express-ejs-layouts express-session jsonwebtoken method-override mongoose installs all the listed packages and their dependencies into your Node.js project. This is typically done to set up a web application with user authentication, session management, and database interactions using MongoDB.
+
+							or
+The command npm i bcrypt connect-mongo cookie-parser dotenv ejs express express-ejs-layouts express-session jsonwebtoken method-override mongoose installs several Node.js packages that are essential for building a web application. These packages include libraries for password hashing, session management, cookie parsing, environment variable management, templating, and database interaction with MongoDB.
+
+
+.gitignore command working :- 
+The command .gitignore is not an executable command but rather a file used in Git repositories. Here's an explanation of its purpose and functionality:
+
+Purpose of .gitignore
+The .gitignore file specifies intentionally untracked files that Git should ignore. This is useful for preventing certain files or directories from being added to the version control system. Common use cases include:
+
+Sensitive Information: Files containing sensitive data, such as API keys or database credentials, should not be tracked by Git.
+
+Build Artifacts: Compiled files, logs, and other generated files that do not need to be versioned can be ignored.
+
+Local Configuration Files: User-specific configuration files that are not relevant to other developers can be excluded.
+
+How It Works
+The .gitignore file contains a list of patterns that match the files and directories to be ignored. Each line in the file represents a pattern.
+When you run Git commands (like git add), Git checks the .gitignore file and excludes any files that match the specified patterns from being staged for commit.
+Example of .gitignore Content
+Here’s an example of what a .gitignore file might look like:
+
+# Node.js dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+
+# Build output
+dist/
+build/
+In this example:
+
+The node_modules/ directory is ignored to prevent tracking of installed dependencies.
+The .env file is ignored to keep sensitive environment variables out of version control.
+Any files in the logs/ directory and any .log files are also ignored.
+
+						Or
+The command .gitignore refers to a file used in Git repositories to specify files and directories that should be ignored by Git. It prevents certain files, such as sensitive information, build artifacts, and local configuration files, from being tracked in version control. The file contains patterns that match the files to be ignored, ensuring they are not included in commits.
+
+
+
+for publishing this project online we used the command in port is
+const PORT = 5000 || process.env.PORT;
+
+GET and POST request
+
+Get:- Used to Get some response
+Data sent in query Strings(limited, string data % visible in URL)
+
+Post:- Used to post something (for create/ write/ update)
+Data sent via request body(any type of data)

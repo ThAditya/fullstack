@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram EJS</title>
+    <link rel="stylesheet" href="style.css/">
+</head>
+<body>
+    <h1>This page is belong to <%= data.name %></h1>
+    <button>Follow</button>
+    <button>message</button>
+    
+    <p>Followers: <%= data.followers %></p>
+    <p>Following: <%= data.following %></p>
+    
+    <hr>
+    
+    <% for(let post of data.posts) { %>
+        <img src="<%= post.image %>">
+        <p>likes: <%= post.likes %></p>    
+        <p>comments: <%= post.comments %></p>    
+        <% } %>
+    </body>
+    <script src="app.js"></script>
+</html>
