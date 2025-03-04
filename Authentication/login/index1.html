@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page with Hidden Sidebar</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <img src="./cc7f3f6d-53bd-441b-b241-c6f458079a08.png" height="100px" alt="" srcset="">
+    <!-- <h2 style="font-family: Georgia, 'Times New Roman', Times, serif;" ><u>Fit-Pulse</u></h2> -->
+    <p>Welcome to the best fitness tracker experience. Sign in now!</p>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Classes</a></li>
+      <li><a href="#">Trainers</a></li>
+      <!-- <li><a href="#">Membership</a></li> -->
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Hamburger Menu -->
+    <div class="hamburger-menu" id="hamburger-menu">
+      &#9776;
+    </div>
+
+    <!-- Login Form -->
+    <div class="login-container">
+      <div class="login-form">
+        <h2>Login</h2>
+        <form action="#" method="POST">
+          <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <button type="submit" class="submit-btn">Login</button>
+          <p class="signup-text">Don't have an account? <a href="#">Sign up</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
